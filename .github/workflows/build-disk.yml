@@ -71,4 +71,4 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y rclone
-          rclone copy --log-level INFO --s3-no-check-bucket $SOURCE_DIR R2:${{ secrets.S3_BUCKET_NAME }}
+          rclone copy --log-level INFO --s3-no-check-bucket ${SOURCE_DIR} R2:${{ secrets.S3_BUCKET_NAME }}
