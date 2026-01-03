@@ -14,9 +14,7 @@ on:
     branches:
       - main
     paths:
-      - "./disk_config/iso.toml"
       - "./.github/workflows/build-iso.yml"
-      - "./Justfile"
 
 env:
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository }}"
@@ -64,19 +62,26 @@ jobs:
 
       - name: Build ISO
         id: build
-        uses: ublue-os/bootc-image-builder-action@main
+        uses: ublue-os/titanoboa@main
         with:
-          bootc-image-builder-image: ghcr.io/centos-workstation/bootc-image-builder:latest
-          use-librepo: true
-          config-file: ./iso.toml
-          image: ${{ env.IMAGE_REGISTRY }}:${{ env.DEFAULT_TAG }}
+          image-ref: ghcr.io/shaunassam/tuqueos:latest
+          flatpaks-list: ${{ github.workspace }}/flatpaks/system-flatpaks.list
+          kargs: ""
+          builder-distro: fedora
+
+      - name: Rename and Checksum ISO
+        run: |
+          mkdir -p output
+          mv ${{ steps.build.outputs.iso-dest }} output/tuqueos.iso
+          (cd output && sha256sum tuqueos.iso | tee tuqueos.iso-CHECKSUM)
 
       - name: Upload ISOs and Checksum to Job Artifacts
         if: inputs.upload-to-s3 != true && github.event_name != 'pull_request'
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
-          path: ${{ steps.build.outputs.output-directory }}
+          name: tuqueos
+          path: output
           if-no-files-found: error
-          retention-days: 0
+          retention-days: 3
           compression-level: 0
           overwrite: true
