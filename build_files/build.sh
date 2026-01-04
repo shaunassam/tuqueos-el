@@ -16,7 +16,7 @@ dnf5 install -y @gnome-desktop gnome-tweaks distrobox flatpak vim-enhanced samba
   gnome-shell-extension-apps-menu gnome-shell-extension-places-menu \
   vlc vlc-plugins-all ffmpeg-free flac faad2 lame libmad \
   amd-ucode-firmware dnf5 intel-gpu-firmware linux-firmware microcode_ctl nvidia-gpu-firmware \
-  sudo systemd-udev tar packages abrt-cli abrt-desktop acl attr bash-color-prompt bash-completion \
+  sudo systemd-udev tar abrt-cli abrt-desktop acl attr bash-color-prompt bash-completion \
   bc bind-utils btrfs-progs bzip2 chrony cifs-utils compsize cpio cryptsetup cyrus-sasl-plain \
   default-editor deltarpm desktop-backgrounds-gnome dnf5-plugins dos2unix dosfstools ethtool exfatprogs \
   fedora-chromium-config fedora-flathub-remote fedora-release-workstation fedora-workstation-backgrounds \
