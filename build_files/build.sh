@@ -34,4 +34,4 @@ systemctl enable smb nmb
 /ctx/base/05-override-schemas.sh
 
 #### Clean up
-/ctx/base/09-cleanup.sh
+# /ctx/base/09-cleanup.sh
