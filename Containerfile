@@ -39,6 +39,10 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
     sed -i 's/#LockLayering.*/LockLayering=true/' /etc/rpm-ostreed.conf
     flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo && \
+    flatpak install --system flathub \
+       org.mozilla.firefox \
+       org.mozilla.Thunderbird \
+       com.mattjakeman.ExtensionManager -y --noninteractive && \
     rpm-ostree cleanup -m && \
     ostree container commit 
 
