@@ -62,7 +62,7 @@ jobs:
 
       - name: Build ISO
         id: build
-        uses: ublue-os/titanoboa@main
+        uses: ublue-os/titanoboa@renovate/actions-checkout-6.x
         with:
           image-ref: ghcr.io/shaunassam/tuqueos:latest
           flatpaks-list: ${{ github.workspace }}/flatpaks/system-flatpaks.list
