@@ -19,7 +19,7 @@ done
 
 # Install Kernel directly from koji (using CoreOS Stable kernel version)
 for instpkg in "${KERNEL_PKGS[@]}"; do
-	dnf5 -y install $KERNEL_URL/$instpkg-$KERNEL_VERSION-$KERNEL_SUBVERSION.fc$FEDORA_VERSION.x86_64.rpm
+	dnf5 -y --no-gpgchecks install $KERNEL_URL/$instpkg-$KERNEL_VERSION-$KERNEL_SUBVERSION.fc$FEDORA_VERSION.x86_64.rpm
 done
 
 # Lock kernel packages to prevent kernel updates
