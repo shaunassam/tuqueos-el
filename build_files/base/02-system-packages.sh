@@ -25,7 +25,6 @@ dnf group install -y \
     base-graphical
 
 dnf install -y \
-    -x gnome-extensions-app
     gnome-tweaks \
     distrobox \
     vim-enhanced \
