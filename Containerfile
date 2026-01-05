@@ -9,11 +9,7 @@ RUN --mount=type=tmpfs,dst=/opt \
     --mount=type=tmpfs,dst=/var \
     --mount=type=tmpfs,dst=/boot \
     --mount=type=bind,from=ctx,source=/,target=/ctx \
-    /ctx/build.sh && \
-    sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
-    sed -i 's/#LockLayering.*/LockLayering=true/' /etc/rpm-ostreed.conf && \
-    rpm-ostree cleanup -m && \
-    ostree container commit 
+    /ctx/build.sh
 
 # Makes `/opt` writeable by default
 RUN rm -rf /opt && ln -s /var/opt /opt
