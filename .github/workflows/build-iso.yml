@@ -70,7 +70,6 @@ jobs:
           image_tag: latest
           variant: Server
           version: 42
-          web_ui: true
           iso_name: build/tuqueos.iso
 
      # - name: Rename and Checksum ISO
