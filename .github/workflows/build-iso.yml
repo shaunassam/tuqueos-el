@@ -69,9 +69,9 @@ jobs:
           image_repo: ghcr.io/shaunassam
           image_tag: latest
           variant: Server
-          version: 40
+          version: 42
           web_ui: true
-          iso_name: tuqueos-c10.iso
+          iso_name: boot.iso
 
       - name: Rename and Checksum ISO
         run: |
