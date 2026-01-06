@@ -76,7 +76,7 @@ jobs:
       - name: Rename and Checksum ISO
         run: |
           mkdir -p output
-          mv ${{ steps.build.outputs.iso_path }} }} output/tuqueos.iso
+          mv ${{ steps.build.outputs.iso_path }} output/tuqueos.iso
           (cd output && sha256sum tuqueos.iso | tee tuqueos.iso-CHECKSUM)
 
       - name: Upload ISOs and Checksum to Job Artifacts
