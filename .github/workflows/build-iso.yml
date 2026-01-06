@@ -68,8 +68,11 @@ jobs:
           image_name: tuqueos
           image_repo: ghcr.io/shaunassam
           image_tag: latest
-          variant: Server
-          version: 42
+          flatpak_remote_url: https://flathub.org/repo/flathub.flatpakrepo
+          flatpak_remote_name: flathub
+          flatpak_remote_refs: org.mozilla.firefox/x86_64/stable org.mozilla.Thunderbird/x86_64/stable com.mattjakeman.ExtensionManager com.ranfdev.DistroShelf/x86_64/stable app/org.gnome.Firmware/x86_64/stable app/com.github.tchx84.Flatseal/x86_64/stable
+          variant: silverblue
+          version: 43
           iso_name: build/tuqueos.iso
 
      # - name: Rename and Checksum ISO
@@ -83,7 +86,9 @@ jobs:
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
           name: tuqueos
-          path: build/tuqueos.iso
+          path: |
+            build/tuqueos.iso
+            build/tuqueos.iso-CHECKSUM
           if-no-files-found: error
           retention-days: 3
           compression-level: 0
