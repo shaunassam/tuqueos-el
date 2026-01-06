@@ -35,8 +35,8 @@ dnf5 -y install gnome-shell-extension-logo-menu
 #systemctl enable podman.socket
 systemctl enable smb nmb
 
-#### Install Stable Kernel
-# /ctx/base/01-replace-kernel.sh
+#### Apply Flatpaks
+/ctx/base/04-flatpaks
 
 #### Apply Overrides 
 /ctx/base/08-override-schemas.sh
