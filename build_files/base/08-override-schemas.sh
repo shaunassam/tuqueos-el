@@ -122,13 +122,37 @@ height-fraction=0.90000000000000002
 show-show-apps-button=true
 
 [org/gnome/shell/extensions/just-perfection]
+clock-menu-position=1
+clock-menu-position-offset=20
+notification-banner-position=2
+osd-position=3
 power-icon=false
 show-apps-button=true
+startup-status=0
+workspace-switcher-should-show=false
+
+[org/gnome/shell/extensions/blur-my-shell]
+settings-version=2
+
+[org/gnome/shell/extensions/blur-my-shell/appfolder]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
+blur=false
+
+[org/gnome/shell/extensions/blur-my-shell/panel]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/window-list]
+brightness=0.59999999999999998
+sigma=30
 
 [org/gnome/software]
-allow-updates=true
+allow-updates=false
 check-timestamp=int64 1767637558
-download-updates=true
+download-updates=false
 download-updates-notify=false
 first-run=false
 flatpak-purge-timestamp=int64 1767591689

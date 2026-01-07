@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
 # Remove unwanted packages
-dnf remove -y subscription-manager
+dnf remove -y subscription-manager \
+	setroubleshoot
 
 # Install required packages for tuqueOS image
 
@@ -25,6 +26,7 @@ dnf group install -y \
     base-graphical
 
 dnf install -y \
+    -x gnome-extensions-app \
     gnome-tweaks \
     distrobox \
     vim-enhanced \
@@ -35,10 +37,12 @@ dnf install -y \
     gnome-shell-extension-dash-to-dock \
     gnome-shell-extension-just-perfection \
     gnome-shell-extension-appindicator \
+    gnome-shell-extension-blur-my-shell \
     gnome-shell-extension-logo-menu \
+    topgrade \
     plymouth \
     plymouth-system-theme \
-    fwupd
+    fwupd \
     ffmpeg-free \
     flac \
     faad2 \
@@ -58,6 +62,8 @@ dnf install -y \
     fzf \
     glow \
     gnome-disk-utility \
+    gnome-font-viewer \
+    gnome-text-editor \
     gum \
     hplip \
     jetbrains-mono-fonts-all \
@@ -72,5 +78,3 @@ dnf install -y \
     tuned-ppd \
     wireguard-tools \
     xhost
-
-dnf remove -y gnome-extensions-app
