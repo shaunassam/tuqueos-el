@@ -8,7 +8,7 @@ set -ouex pipefail
 dnf5 remove -y gnome-extensions-app
 
 # Adding Fedora Workstation and additional packages
-dnf5 install -y gnome-tweaks distrobox podman vim-enhanced samba @virtualization fuse-sshfs \
+dnf5 install -y gnome-tweaks distrobox podman vim-enhanced samba fuse-sshfs \
   gnome-shell-extension-dash-to-dock gnome-shell-extension-just-perfection gnome-shell-extension-appindicator \
   gnome-shell-extension-apps-menu gnome-shell-extension-places-menu \
   ffmpeg-free flac faad2 lame libmad
