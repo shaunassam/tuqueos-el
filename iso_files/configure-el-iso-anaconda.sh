@@ -66,7 +66,7 @@ SPECS=(
 
 dnf copr enable -y jreilly1821/anaconda-webui
 
-dnf install -y "${SPECS[@]}"
+dnf install -y --nobest "${SPECS[@]}"
 
 
 # Fix the wrong dir for webui
