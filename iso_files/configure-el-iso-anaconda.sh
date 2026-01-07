@@ -38,7 +38,7 @@ systemctl disable bootloader-update.service
 # systemctl disable brew-update.timer
 # systemctl disable brew-setup.service
 systemctl disable rpm-ostreed-automatic.timer
-systemctl disable uupd.timer
+#systemctl disable uupd.timer
 #systemctl disable ublue-system-setup.service
 # systemctl disable ublue-guest-user.service
 #systemctl disable check-sb-key.service
