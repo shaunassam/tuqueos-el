@@ -19,7 +19,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build.sh && \
-    rpm-ostree override remove firefox firefox-langpacks && \
+    rpm-ostree override remove firefox firefox-langpacks gnome-extensions-app && \
     sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
     sed -i 's/#LockLayering.*/LockLayering=true/' /etc/rpm-ostreed.conf && \
     flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo && \
