@@ -21,8 +21,7 @@ dnf group install -y \
     "GNOME" \
     "Multimedia" \
     "Network File System Client" \
-    "Virtualization Hypervisor" \
-    "Virtualization Tools" \
+    "Server with GUI" \
     base-graphical
 
 dnf install -y \
