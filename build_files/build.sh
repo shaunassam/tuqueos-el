@@ -8,6 +8,9 @@ set -ouex pipefail
 # Install packages
 /ctx/base/02-system-packages.sh
 
+# Install Flatpaks
+/ctx/base/03-flatpaks.sh
+
 #### Apply Overrides 
 /ctx/base/08-override-schemas.sh
 

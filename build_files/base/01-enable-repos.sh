@@ -4,5 +4,4 @@
 
 dnf install -y epel-release && \
 dnf config-manager --set-enabled crb && \
-dnf copr enable -y sassam/tuqueOS && \
-dnf copr enable -y lilay/topgrade
+dnf copr enable -y sassam/tuqueOS
